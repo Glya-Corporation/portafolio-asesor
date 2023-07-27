@@ -39,7 +39,7 @@ const AddPublication = () => {
           </option>
         ))}
       </select>
-      <button>Login</button>
+      <button>Registrar</button>
     </form>
   );
 }

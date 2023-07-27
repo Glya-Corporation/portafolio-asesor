@@ -5,8 +5,10 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 //import ProtectedRouter from './components/ProtectedRouter';
 import Home from "./pages/Home"
 import Login from "./pages/Login"
-import './App.css'
 import AddPublication from './components/AddPublication'
+import ShowList from './components/ShowList'
+
+import './App.css'
 
 function App() {
 
@@ -14,9 +16,11 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path='/login' element={<Login />} />
-        <Route path='/add' element={<AddPublication />} />
         <Route element={'<ProtectedRouter/>'}>
           <Route path='/home' element={<Home />} />
+          <Route path='/add' element={<Home />} />
+          <Route path='/show/appo' element={<AddPublication />} />
+          <Route path='/show/clients' element={<ShowList />} />
         </Route>
       </Routes>
     </HashRouter>

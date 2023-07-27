@@ -1,10 +1,14 @@
+import { useNavigate } from 'react-router-dom';
+
 const Home = () => {
+  const navigate = useNavigate();
+  
   return (
     <main>
       <ul>
-        <li>Agregar</li>
-        <li>Ver citas</li>
-        <li>Ver clientes</li>
+        <li onClick={() => navigate('/add')}>Agregar</li>
+        <li onClick={() => navigate('/show/appo')}>Ver citas</li>
+        <li onClick={() => navigate('/show/clients')}>Ver clientes</li>
       </ul>
     </main>
   )
