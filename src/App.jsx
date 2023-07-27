@@ -1,8 +1,6 @@
-import { useState } from 'react'
-
 import { HashRouter, Routes, Route } from 'react-router-dom'
 
-//import ProtectedRouter from './components/ProtectedRouter';
+import ProtectedRouter from './components/ProtectedRouter';
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import AddPublication from './components/AddPublication'
@@ -16,10 +14,10 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path='/login' element={<Login />} />
-        <Route element={'<ProtectedRouter/>'}>
-          <Route path='/home' element={<Home />} />
-          <Route path='/add' element={<Home />} />
-          <Route path='/show/appo' element={<AddPublication />} />
+        <Route element={<ProtectedRouter />}>
+          <Route path='/' element={<Home />} />
+          <Route path='/add' element={<AddPublication />} />
+          <Route path='/show/appo' element={<ShowList />} />
           <Route path='/show/clients' element={<ShowList />} />
         </Route>
       </Routes>
